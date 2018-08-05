@@ -1,0 +1,337 @@
+﻿<WorkSpace_Data WSVersID="Badger_3" ToolPlugin="QACT">
+  <ACDBFile_Paths>
+    <ACDBFile_Paths path="Bluetooth_cal.acdb" />
+    <ACDBFile_Paths path="General_cal.acdb" />
+    <ACDBFile_Paths path="Global_cal.acdb" />
+    <ACDBFile_Paths path="Handset_cal.acdb" />
+    <ACDBFile_Paths path="Hdmi_cal.acdb" />
+    <ACDBFile_Paths path="Headset_cal.acdb" />
+    <ACDBFile_Paths path="Speaker_cal.acdb" />
+  </ACDBFile_Paths>
+  <OpenDSP MajorMinor="1_0">
+    <AREA_LIST>
+      <AREA type="TX" name="AUDIO_COPP_TX">
+        <TOPOLOGY name="AUDIO_TX_REC" ID="0x1000FFF6" type="TX" NewAdded="true">
+          <Block name="AUDIO_TX_HPF_IIR" ID="0x00010C3D" />
+          <Block name="AUDIO_MIC_GAIN" ID="0x00010C35" />
+          <Block name="AUDIO_TX_AIG" ID="0x00010716" />
+          <Block name="AUDIO_TX_IIR" ID="0x00010C41" />
+          <Block name="AUDIO_MBDRC" ID="0x00010C06" />
+          <Block name="AUDIO_EANS" ID="0x00010C4A" />
+        </TOPOLOGY>
+        <TOPOLOGY name="AUDIO_TX_KTV_TOPOLOGY" ID="0x10013001" type="TX" NewAdded="true">
+          <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" type="TX" NewAdded="true" dataView_ID="0xFFFF0001" />
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="AUDIO_COPP_RX">
+        <TOPOLOGY name="AUDIO_DS2_CUSTOM_TOPOLOGY" ID="0x1301033B" type="RX" NewAdded="true">
+          <Block name="AUDIO_DS1AP" ID="0x00010775" />
+          <Block name="AUDIO_CHMIXER" ID="0x00010341" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+          <Block name="AUDIO_PBE" ID="0x00010C2A" />
+          <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+          <Block name="AUDIO_MBDRC" ID="0x00010C06" gain_dependant="Yes" />
+          <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME" ID="0x00010BFE" />
+        </TOPOLOGY>
+        <TOPOLOGY name="AUDIO_RX_STEREO_COPP_MBDRC_V3" ID="0x11000000" type="RX" NewAdded="true">
+          <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+          <Block name="AUDIO_PBE" ID="0x00010C2A" />
+          <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+          <Block name="AUDIO_MBDRC_V3" ID="0x0001090B" gain_dependant="Yes" />
+        </TOPOLOGY>
+        <TOPOLOGY name="AUDIO_RX_MONO_COPP_MBDRC_V3" ID="0x11000001" type="RX" NewAdded="true">
+          <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+          <Block name="AUDIO_PBE" ID="0x00010C2A" />
+          <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+          <Block name="AUDIO_MBDRC_V3" ID="0x0001090B" gain_dependant="Yes" />
+        </TOPOLOGY>
+        <TOPOLOGY name="VIVO_SPEAKER_BOOST" ID="0x10023001" type="RX" NewAdded="true">
+          <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" />
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="AUDIO_POPP_RX">
+        <TOPOLOGY name="AUDPROC_OFFLOAD_EFFECTS" ID="0x1000FFFF" type="RX" NewAdded="true">
+          <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME" ID="0x00010BFE" />
+          <Block name="AUDIO_POPLESS_EQUALIZER" ID="0x000108BA" />
+          <Block name="AUDIO_VIRTUALIZER" ID="0x000108A5" />
+          <Block name="AUDIO_CHMIXER" ID="0x00010341" />
+          <Block name="AUDIO_REVERB" ID="0x000108AA" />
+          <Block name="AUDIO_BASS_BOOST" ID="0x000108A1" />
+          <Block name="AUDIO_PBE" ID="0x00010C2A" />
+          <Block name="AUDIO_SOFT_STEP_VOLUME_INSTANCE_2" ID="0x00010910" />
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="TX" name="AFE_TX">
+        <TOPOLOGY name="AFE_TX_TOPOLOGY_ID_DSM" ID="0x1000FF01" type="TX" NewAdded="true">
+          <Block name="AFE_MODULE_DSM_TX" ID="0x1000FF03" NewAdded="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x10001063" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+      </AREA>
+      <AREA type="RX" name="AFE_RX">
+        <TOPOLOGY name="AFE_RX_TOPOLOGY_ID_DSM" ID="0x1000FF02" type="RX" NewAdded="true">
+          <Block name="AFE_MODULE_DSM_RX" ID="0x1000FF04" NewAdded="true">
+            <DATA_VIEW>
+              <INTERFACE I_id="0x10001063" />
+              <INTERFACE I_id="0x10001064" />
+            </DATA_VIEW>
+          </Block>
+        </TOPOLOGY>
+      </AREA>
+    </AREA_LIST>
+    <TOPOLOGY_LIST>
+      <TOPOLOGY name="AUDIO_DS2_CUSTOM_TOPOLOGY" ID="0x1301033B" type="RX" NewAdded="true">
+        <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+        <Block name="AUDIO_MBDRC" ID="0x00010C06" gain_dependant="Yes" />
+        <Block name="AUDIO_PBE" ID="0x00010C2A" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME" ID="0x00010BFE" />
+        <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+        <Block name="AUDIO_CHMIXER" ID="0x00010341" />
+        <Block name="AUDIO_DS1AP" ID="0x00010775" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_RX_STEREO_COPP_MBDRC_V3" ID="0x11000000" type="RX" NewAdded="true">
+        <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+        <Block name="AUDIO_PBE" ID="0x00010C2A" />
+        <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+        <Block name="AUDIO_MBDRC_V3" ID="0x0001090B" gain_dependant="Yes" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_RX_MONO_COPP_MBDRC_V3" ID="0x11000001" type="RX" NewAdded="true">
+        <Block name="AUDIO_IIR" ID="0x00010C02" gain_dependant="Yes" />
+        <Block name="AUDIO_PBE" ID="0x00010C2A" />
+        <Block name="AUDIO_RX_CODEC_GAIN" ID="0x00010C37" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+        <Block name="AUDIO_MBDRC_V3" ID="0x0001090B" gain_dependant="Yes" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDPROC_OFFLOAD_EFFECTS" ID="0x1000FFFF" type="RX" NewAdded="true">
+        <Block name="AUDIO_PBE" ID="0x00010C2A" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME" ID="0x00010BFE" />
+        <Block name="AUDIO_HIGH_THD_RESAMPLER" ID="0x00010719" />
+        <Block name="AUDIO_VIRTUALIZER" ID="0x000108A5" />
+        <Block name="AUDIO_REVERB" ID="0x000108AA" />
+        <Block name="AUDIO_BASS_BOOST" ID="0x000108A1" />
+        <Block name="AUDIO_POPLESS_EQUALIZER" ID="0x000108BA" />
+        <Block name="AUDIO_CHMIXER" ID="0x00010341" />
+        <Block name="AUDIO_SOFT_STEP_VOLUME_INSTANCE_2" ID="0x00010910" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_TX_REC" ID="0x1000FFF6" type="TX" NewAdded="true">
+        <Block name="AUDIO_MBDRC" ID="0x00010C06" />
+        <Block name="AUDIO_MIC_GAIN" ID="0x00010C35" />
+        <Block name="AUDIO_EANS" ID="0x00010C4A" />
+        <Block name="AUDIO_TX_IIR" ID="0x00010C41" />
+        <Block name="AUDIO_TX_HPF_IIR" ID="0x00010C3D" />
+        <Block name="AUDIO_TX_AIG" ID="0x00010716" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AUDIO_TX_KTV_TOPOLOGY" ID="0x10013001" type="TX" NewAdded="true">
+        <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" type="TX" NewAdded="true" dataView_ID="0xFFFF0001" />
+      </TOPOLOGY>
+      <TOPOLOGY name="AFE_TX_TOPOLOGY_ID_DSM" ID="0x1000FF01" type="TX" NewAdded="true">
+        <Block name="AFE_MODULE_DSM_TX" ID="0x1000FF03" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x10001063" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+      <TOPOLOGY name="AFE_RX_TOPOLOGY_ID_DSM" ID="0x1000FF02" type="RX" NewAdded="true">
+        <Block name="AFE_MODULE_DSM_RX" ID="0x1000FF04" NewAdded="true">
+          <DATA_VIEW>
+            <INTERFACE I_id="0x10001063" />
+            <INTERFACE I_id="0x10001064" />
+          </DATA_VIEW>
+        </Block>
+      </TOPOLOGY>
+      <TOPOLOGY name="VIVO_SPEAKER_BOOST" ID="0x10023001" type="RX" NewAdded="true">
+        <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" />
+      </TOPOLOGY>
+    </TOPOLOGY_LIST>
+    <BLOCK_LIST>
+      <Block name="AUDIO_SRS_TRUMEDIA" ID="0x10005010" version="0" type="RX" dataView_ID="0xFFFF0001" />
+      <Block name="CAPI_V2_VIVO_SPEAKER_BOOST" ID="0x10021001" type="RX" NewAdded="true" dataView_ID="0xFFFF0002" />
+      <Block name="AUDIO_TX_KTV_MODULE" ID="0x10011001" type="TX" NewAdded="true" dataView_ID="0xFFFF0003" />
+      <Block name="AFE_MODULE_DSM_TX" ID="0x1000FF03" NewAdded="true" dataView_ID="0xFFFF0004" />
+      <Block name="AFE_MODULE_DSM_RX" ID="0x1000FF04" NewAdded="true" dataView_ID="0xFFFF0005" />
+    </BLOCK_LIST>
+    <AB_VIEW_LIST>
+      <AB_VIEW dataView_ID="0xFFFF0001" name="AUDIO_SRS_TRUMEDIA" NewAdded="true" />
+      <AB_VIEW dataView_ID="0xFFFF0002" name="CAPI_V2_VIVO_SPEAKER_BOOST" NewAdded="true">
+        <DATA_VIEW name="Data" display="true">
+          <INTERFACE I_id="0x10020000" />
+          <INTERFACE I_id="0x10020006" />
+          <INTERFACE I_id="0x10020007" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0003" name="AUDIO_TX_KTV_MODULE" NewAdded="true">
+        <DATA_VIEW name="Data" display="true">
+          <INTERFACE I_id="0x10012001" />
+          <INTERFACE I_id="0x10012002" />
+          <INTERFACE I_id="0x10012003" />
+          <INTERFACE I_id="0x10012004" />
+          <INTERFACE I_id="0x10012005" />
+          <INTERFACE I_id="0x10012006" />
+          <INTERFACE I_id="0x10012007" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0004" name="AFE_MODULE_DSM_TX" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x10001063" />
+        </DATA_VIEW>
+      </AB_VIEW>
+      <AB_VIEW dataView_ID="0xFFFF0005" name="AFE_MODULE_DSM_RX" NewAdded="true">
+        <DATA_VIEW>
+          <INTERFACE I_id="0x10001063" />
+          <INTERFACE I_id="0x10001064" />
+        </DATA_VIEW>
+      </AB_VIEW>
+    </AB_VIEW_LIST>
+    <INTERFACE_LIST>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_ENABLE" I_id="0x10012001" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_EQ" I_id="0x10012002" hexStr="000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="24">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT_ARRAY name="params" length="5" type="int32" min="0xFFFFFFF1" max="0xF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_NOISE_CANCEL" I_id="0x10012003" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x2" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_COMPRESSOR" I_id="0x10012004" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_REVERB" I_id="0x10012005" hexStr="000000006616000000100000711500008F0A0000661600007B000000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x1" max="0x2000" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x1" max="0x2000" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x1" max="0x2000" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x0" max="0x2000" />
+        <CONFIG_ELEMENT name="width" type="int32" min="0x1" max="0x2000" />
+        <CONFIG_ELEMENT name="gain" type="int32" min="0x1" max="0x2000" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_ECHO" I_id="0x10012006" hexStr="000000000010000001000000711500008F0A0000" NewAdded="true" maxSize="20">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="feedback" type="int32" min="0x0" max="0x2000" />
+        <CONFIG_ELEMENT name="delay" type="int32" min="0x0" max="0x2000" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x1" max="0x2000" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x0" max="0x2000" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_PARAM_ID_KTV_HC" I_id="0x10012007" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AFE_PARAM_ID_DSM_ENABLE" I_id="0x10001063" hexStr="0000000000000000" NewAdded="true" maxSize="8">
+        <CONFIG_ELEMENT name="enable_flag" type="uint32" min="0x0" max="0xFFFFFFFF" />
+        <CONFIG_ELEMENT name="working_mode" type="uint32" min="0x0" max="0xFFFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AFE_PARAM_ID_DSM_CFG" I_id="0x10001064" hexStr="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="1024">
+        <CONFIG_ELEMENT name="opcode" type="uint32" min="0x0" max="0xFFFFFFFF" />
+        <CONFIG_ELEMENT name="count" type="uint32" min="0x0" max="0xFFFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="params" length="254" type="uint32" min="0x0" max="0xFFFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_GRAMOPHONE_PARAMS" I_id="0x10012008" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="PARAM_ID_KTV_VOICE_GAIN" I_id="0x10012009" hexStr="00200000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="voice_gain" type="int32" min="0x0" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_ENABLE" I_id="0x10020000" hexStr="00000000" NewAdded="true" maxSize="4">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_EQ" I_id="0x10020001" hexStr="00000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="208">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="Gain" type="int32" min="0x0" max="0x8000" />
+        <CONFIG_ELEMENT_ARRAY name="Filter0" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter1" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter2" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter3" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter4" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter5" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter6" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter7" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter8" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Filter9" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_REVERB" I_id="0x10020002" hexStr="00000000010000000100000001000000010000000100000001000000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="witdth" type="int32" min="0x0" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="Gain" type="int32" min="0x0" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_STEREO" I_id="0x10020003" hexStr="00000000001800000020000000180000002000000016000000160000" NewAdded="true" maxSize="28">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="side_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="dry_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="wet_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="roomsize" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="damp" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_VIRTUAL_BASS" I_id="0x10020004" hexStr="00000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="40">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="clip_level" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="nld_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="origin_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="high_band_gain" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="filter" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_SVC" I_id="0x10020005" hexStr="00000000002000000300000007000000" NewAdded="true" maxSize="16">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="level" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="attact_order" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="release_order" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_SBS" I_id="0x10020006" hexStr="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="180">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="nld_gain_left" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="nld_gain_right" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="channel_ration" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT name="channel_num" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_low_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_mid_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_high_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_full_left" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_low_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_mid_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_high_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="sbs_drc_full_right" length="5" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_EQ_PARAM" I_id="0x10020007" hexStr="000000000020000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" NewAdded="true" maxSize="492">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT_ARRAY name="gain" length="2" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left0" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left1" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left2" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left3" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left4" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left5" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left6" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left7" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left8" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Left9" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right0" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right1" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right2" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right3" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right4" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right5" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right6" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right7" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right8" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+        <CONFIG_ELEMENT_ARRAY name="Right9" length="6" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+      <INTERFACE name="AUDIO_EFFECT_PARAM_CB_PARAM" I_id="0x10020008" hexStr="000000000200000000000000" NewAdded="true" maxSize="12">
+        <CONFIG_ELEMENT name="enable_flag" type="int32" min="0x0" max="0x1" />
+        <CONFIG_ELEMENT name="channel_num" type="int32" min="0x0" max="0xA" />
+        <CONFIG_ELEMENT name="channel_ration" type="int32" min="0x80000000" max="0x7FFFFFFF" />
+      </INTERFACE>
+    </INTERFACE_LIST>
+  </OpenDSP>
+  <GUI_Data />
+</WorkSpace_Data>

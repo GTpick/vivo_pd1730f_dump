@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+    <version>0</version>
+    <feature name= "bve">
+	<value name= "1">
+    </value>
+	</feature>
+</content>

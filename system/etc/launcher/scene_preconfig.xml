@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.bbk.scene.indoor"
+	launcher:shortAxisCells="4" 
+	launcher:longAxisCells="7">
+	
+    <!-- 录音机 -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="0"
+        launcher:className="com.android.bbksoundrecorder.SoundRecorder"
+        launcher:container="-100"
+        launcher:packageName="com.android.bbksoundrecorder"
+        launcher:screen="0" />
+        
+    <!-- 指南针  -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="0"
+        launcher:className="com.vivo.compass.CalibrationActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.compass"
+        launcher:screen="0" />	
+    
+    <!-- 意见反馈  -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="0"
+        launcher:className="com.vivo.website.feedback.HotQuestionEntry"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.website"
+        launcher:screen="0" />
+        
+    <!-- 收音机 -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="0"
+        launcher:className="com.vivo.FMRadio.FMRadio"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.FMRadio"
+        launcher:screen="0" />	
+		
+    <!-- Email -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="1"
+        launcher:className="com.vivo.email.activity.Welcome"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.email"
+        launcher:screen="0" />
+    
+    <!-- 一键锁屏 -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="1"
+        launcher:className="com.android.bbk.lockscreen3.LockScreenActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.bbk.lockscreen3"
+        launcher:screen="0" />
+        
+    <!-- Notes -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="1"
+        launcher:className="com.android.notes.Notes"
+        launcher:container="-100"
+        launcher:packageName="com.android.notes"
+        launcher:screen="0" />		
+	
+    <!-- Calculator -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="1"
+        launcher:className="com.android.bbkcalculator.Calculator"
+        launcher:container="-100"
+        launcher:packageName="com.android.bbkcalculator"
+        launcher:screen="0" />		
+	
+    <!-- vivoCloud -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="2"
+        launcher:className="com.bbk.cloud.ui.BBKCloudHomeScreen"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.cloud"
+        launcher:screen="0" />  	
+	
+    <!-- File Manager -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="2"
+        launcher:className="com.android.filemanager.FileManagerActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.filemanager"
+        launcher:screen="0" />
+
+    <!-- 互传 -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="2"
+        launcher:className="com.vivo.easyshare.activity.SplashScreenActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.easyshare"
+        launcher:screen="0" />	
+
+    <!-- vivo官网 -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="2"
+        launcher:className="com.vivo.website.activity.SplashActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.website"
+        launcher:screen="0" />		
+        
+    <!-- i Manager -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="3"
+        launcher:className="com.iqoo.secure.MainGuideActivity"
+        launcher:container="-100"
+        launcher:packageName="com.iqoo.secure"
+        launcher:screen="0" />		
+	
+    <!-- Videos -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="3"
+        launcher:className="com.android.VideoPlayer.VideoPlayer"
+        launcher:container="-100"
+        launcher:packageName="com.android.VideoPlayer"
+        launcher:screen="0" />	
+	
+    <!-- 天气 -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="3"
+        launcher:className="com.vivo.weather.WeatherMain"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.weather"
+        launcher:screen="0" />		
+	
+    <!-- Contacts -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="3"
+        launcher:className="com.android.contacts.DialtactsContactsEntryActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.contacts"
+        launcher:screen="0" />	
+	
+   <!-- app商店 -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="4"
+        launcher:className="com.vivo.appstore.activity.LaunchActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.appstore"
+        launcher:screen="0" />		
+	
+   <!-- i 音乐 -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="4"
+        launcher:className="com.android.bbkmusic.WidgetToTrackActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.bbkmusic"
+        launcher:screen="0" />	
+	
+    <!-- Calendar -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="4"
+        launcher:className="com.bbk.calendar.MainActivity"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.calendar"
+        launcher:screen="0" />		
+			
+    <!-- i Theme -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="4"
+        launcher:className="com.bbk.theme.Theme"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.theme"
+        launcher:screen="0" />	
+	
+   <!-- Play 商店 -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="5"
+        launcher:className="com.android.vending.AssetBrowserActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.vending"
+        launcher:screen="0" />	
+	
+    <!-- Clock -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="5"
+        launcher:className="com.android.BBKClock.Timer"
+        launcher:container="-100"
+        launcher:packageName="com.android.BBKClock"
+        launcher:screen="0" />	
+	
+    <!-- Settings -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="5"
+        launcher:className="com.android.settings.Settings"
+        launcher:container="-100"
+        launcher:packageName="com.android.settings"
+        launcher:screen="0" />	
+	
+    <!-- Albums -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="5"
+        launcher:className="com.android.gallery3d.vivo.GalleryTabActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.gallery"
+        launcher:screen="0" />		
+	
+	<!-- Phone -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="6"
+        launcher:className="com.android.dialer.TwelveKeyDialer"
+        launcher:container="-100"
+        launcher:packageName="com.android.dialer"
+        launcher:screen="0" />
+		
+    <!-- Messages -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="6"
+        launcher:className="com.android.mms.ui.ConversationList"
+        launcher:container="-100"
+        launcher:packageName="com.android.mms"
+        launcher:screen="0" />
+
+    <!-- Browser -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="6"
+        launcher:className="com.vivo.browser.BrowserActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.browser"
+        launcher:screen="0" />
+	
+    <!-- Camera -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="6"
+        launcher:className="com.android.camera.CameraActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.camera"
+        launcher:screen="0" />
+    
+    	
+	<!-- Google -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="0"
+        launcher:className="com.google.android.googlequicksearchbox.SearchActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:screen="1" />	
+        
+    <!-- Chrome -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="0"
+        launcher:className="com.google.android.apps.chrome.Main"
+        launcher:container="-100"
+        launcher:packageName="com.android.chrome"
+        launcher:screen="1" />
+        
+    <!-- Gmail -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="0"
+        launcher:className="com.google.android.gm.ConversationListActivityGmail"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.gm"
+        launcher:screen="1" />
+        
+    <!-- 地图 -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="0"
+        launcher:className="com.google.android.maps.MapsActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.apps.maps"
+        launcher:screen="1" />
+		
+    <!-- YouTube -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="1"
+        launcher:className="com.google.android.youtube.app.honeycomb.Shell$HomeActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.youtube"
+        launcher:screen="1" />			
+		
+	 <!--  云端硬盘 -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="1"
+        launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.apps.docs"
+        launcher:screen="1" />					
+				
+	 <!--  Play Music -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="1"
+        launcher:className="com.android.music.activitymanagement.TopLevelActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.music"
+        launcher:screen="1" />	
+		
+   <!--  Play 影视 -->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="1"
+        launcher:className="com.google.android.youtube.videos.EntryPoint"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.videos"
+        launcher:screen="1" />
+						
+    <!-- Duo -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="2"
+        launcher:className="com.google.android.apps.tachyon.MainActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.apps.tachyon"
+        launcher:screen="1" />				
+					
+	<!-- G+ 照片 -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="2"
+        launcher:className="com.google.android.apps.plus.phone.ConversationListActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.apps.plus"
+        launcher:screen="1" />				
+
+	<!-- G+ 照片 -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="2"
+        launcher:className="com.google.android.apps.photos.home.HomeActivity"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.apps.photos"
+        launcher:screen="1" />						
+
+    <!-- lazada -->
+    <favorite
+        launcher:cellx="2"
+        launcher:celly="2"
+        launcher:className="com.lazada.activities.EnterActivity"
+        launcher:container="-100"
+        launcher:packageName="com.lazada.android"
+        launcher:screen="1" />
+    
+    <!-- UC Browser-->
+    <favorite
+        launcher:cellx="3"
+        launcher:celly="2"
+        launcher:className="com.UCMobile.main.UCMobile"
+        launcher:container="-100"
+        launcher:packageName="com.UCMobile.intl"
+        launcher:screen="1" />  
+        
+    <!-- Facebook -->
+    <favorite
+        launcher:cellx="0"
+        launcher:celly="3"
+        launcher:className="com.facebook.katana.LoginActivity"
+        launcher:container="-100"
+        launcher:packageName="com.facebook.katana"
+        launcher:screen="1" />					
+
+    <!-- WPS Office -->
+    <favorite
+        launcher:cellx="1"
+        launcher:celly="3"
+        launcher:className="cn.wps.moffice.documentmanager.PreStartActivity"
+        launcher:container="-100"
+        launcher:packageName="cn.wps.moffice_eng"
+        launcher:screen="1" />		
+
+</favorites>

@@ -1,0 +1,17 @@
+import /oem/prop.default ro.*
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.vivo.massproduction=no
+ro.secure=1
+security.perf_harden=1
+ro.adb.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Sat Jun 23 23:06:05 CST 2018
+ro.bootimage.build.date.utc=1529766365
+ro.bootimage.build.fingerprint=vivo/1723/1723:8.1.0/OPM1.171019.011/compil06232306:user/release-keys
+persist.sys.usb.config=none

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+  <version>1</version>
+
+  <api_name name="setMode">
+  <app_pkg_info pkg_name="im.yixin" app_ver = "0" />
+  </api_name>
+
+  <api_name name="setSpeakerphoneOn">
+  <app_pkg_info pkg_name="com.duowan.mobile" app_ver = "0" />
+  </api_name>
+
+  <api_name name="setBluetoothScoOn">
+  </api_name>
+
+</content>

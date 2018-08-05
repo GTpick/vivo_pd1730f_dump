@@ -1,0 +1,247 @@
+<!--
+  Copyright (c) 2016 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<!--
+CommonChromatixInfo:
+    CommonChromatixInfo is the information about chromatix needed for
+        various use cases.
+    Ex:- Preview, Snapshot, ZSL, HFR, HDR, Video, Liveshot for ISP, CPP,
+        3A and SW PostProc.
+    Entries in this node are common for all sensor modes.
+
+ResolutionChromatixInfo:
+    ResolutionChromatixInfo is the information about chromatix needed for
+        various use cases.
+    Ex:- Preview, Snapshot, ZSL, HFR, HDR, Video, Liveshot for ISP, CPP,
+        3A and SW PostProc.
+    Entries in this node are specific to sensor resolution.
+
+ChromatixName:
+    Contains the list of chromatix names for all modules.
+    special_mode_mask:
+        It is the bit mask for special modes, which is used for
+            chromatix selection.
+        Special modes can be any mode that needs a special chromatix.
+        Ex:- scene mode, DZOOM mode, OIS capture mode, flash mode
+        This is applicable for CommonChromatixInfo and
+            ResolutionChromatixInfo.
+        special_mode_mask="0" means none of the special modes are
+            selected.
+    sensor_resolution_index:
+        It is the sensor resolution index for which chromatix libraries
+            will be choosen.
+        It is applicable only in ResolutionChromatixInfo.
+
+ISPCommon :
+    Common tuning library name for ISP
+ISPPreview :
+    Preview tuning library name for ISP
+ISPSnapshot :
+    Snapshot tuning library name for ISP
+CPPCommon :
+    Common tuning library name for CPP
+CPPPreview :
+    Preview tuning library name for CPP
+CPPSnapshot :
+    Snapshot tuning library name for CPP
+CPPLiveshot :
+    Liveshot tuning library name for CPP
+PostProc :
+    Tuning library name for postproc module
+A3Preview :
+    Preview tuning library for 3A
+A3Video :
+    Video tuning library for 3A
+
+Order of Resolution Pick:
+    Assume the current sensor mode is "r" and special mode mask is "s".
+    Chromatix for a module and type is choosen in this order till we find a
+        valid chroamtix file name or else NULL is returned.
+    1) From ResolutionChromatixInfo node for which sensor_resolution_index
+        is "r" and special_mode_mask is "s".
+    2) From CommonChromatixInfo node for which special_mode_mask is "s".
+    3) From ResolutionChromatixInfo node for which sensor_resolution_index
+        is "r" and special_mode_mask is "0".
+    4) From CommonChromatixInfo node for which special_mode_mask is "0".
+    5) NULL is returned if we dont find in any of the above cases.
+
+special_mode_mask values:
+    SENSOR_SPECIAL_MODE_NONE = 0,
+    SENSOR_SPECIAL_MODE_FLASH = 1,
+    SENSOR_SPECIAL_MODE_ZOOM_UPSCALE = 2,
+    SENSOR_SPECIAL_MODE_ZOOM_DOWNSCALE = 4,
+    SENSOR_SPECIAL_MODE_OIS_CAPTURE = 8,
+-->
+
+<ChromatixConfigurationRoot>
+  <CommonChromatixInfo>
+    <ChromatixName special_mode_mask="0">
+      <ISPCommon>s5k2xa_common</ISPCommon>
+      <PostProc>s5k2xa_postproc</PostProc>
+    </ChromatixName>
+	<ChromatixName special_mode_mask="FLASH">
+      <CPPSnapshot>s5k2xa_cpp_nightshot</CPPSnapshot>
+    </ChromatixName>
+  </CommonChromatixInfo>
+  <ResolutionChromatixInfo>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="0">
+      <ISPPreview>s5k2xa_preview</ISPPreview>
+      <ISPSnapshot>s5k2xa_snapshot</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_preview</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_snapshot</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_liveshot</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_preview</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_AUTO_NIGHT">
+      <ISPPreview>s5k2xa_preview</ISPPreview>
+      <ISPSnapshot>s5k2xa_nightshot</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_preview</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_nightshot</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_liveshot</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_preview</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_FACE_BEAUTY">
+      <ISPPreview>s5k2xa_beauty_preview</ISPPreview>
+      <ISPSnapshot>s5k2xa_beauty_snapshot</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_beauty_preview</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_beauty_snapshot</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_liveshot</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_beauty</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_VIVO_HDR">
+      <ISPPreview>s5k2xa_preview</ISPPreview>
+      <ISPSnapshot>s5k2xa_hdr</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_preview</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_snapshot</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_liveshot</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_hdr</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="FB_HDR">
+      <ISPPreview>s5k2xa_preview</ISPPreview>
+      <ISPSnapshot>s5k2xa_hdr</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_preview</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_snapshot</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_liveshot</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_hdr</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="AR_STICKER">
+      <ISPPreview>s5k2xa_ar</ISPPreview>
+      <ISPSnapshot>s5k2xa_ar</ISPSnapshot>
+      <ISPVideo>s5k2xa_ar</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_ar</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_ar</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_ar</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_ar</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_ar</A3Preview>
+      <A3Video>s5k2xa_zsl_ar</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="VIDEO_720P">
+      <ISPPreview>s5k2xa_video</ISPPreview>
+      <ISPSnapshot>s5k2xa_video</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_video_720p</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_video_720p</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video_720p</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_video_720p</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_video</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="VIDEO_1080P">
+      <ISPPreview>s5k2xa_video</ISPPreview>
+      <ISPSnapshot>s5k2xa_video</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_video_1080p</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_video_1080p</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video_1080p</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_video_1080p</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_video</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="0" special_mode_mask="VIDEO_4K">
+      <ISPPreview>s5k2xa_video</ISPPreview>
+      <ISPSnapshot>s5k2xa_video</ISPSnapshot>
+      <ISPVideo>s5k2xa_video</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_video_4k</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_video_4k</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_video_4k</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_video_4k</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_video</A3Preview>
+      <A3Video>s5k2xa_zsl_video</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_QQ">
+      <ISPPreview>s5k2xa_qq</ISPPreview>
+      <ISPSnapshot>s5k2xa_qq</ISPSnapshot>
+      <ISPVideo>s5k2xa_qq</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_qq</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_qq</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_qq</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_qq</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_qq</A3Preview>
+      <A3Video>s5k2xa_zsl_qq</A3Video>
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_WECHAT">
+      <ISPPreview>s5k2xa_weixin</ISPPreview>
+      <ISPSnapshot>s5k2xa_weixin</ISPSnapshot>
+      <ISPVideo>s5k2xa_weixin</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_weixin</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_weixin</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_weixin</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_weixin</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_weixin</A3Preview>
+      <A3Video>s5k2xa_zsl_weixin</A3Video>
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_VOLTE">
+     <ISPPreview>s5k2xa_volte</ISPPreview>
+      <ISPSnapshot>s5k2xa_volte</ISPSnapshot>
+      <ISPVideo>s5k2xa_volte</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_volte</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_volte</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_volte</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_volte</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_volte</A3Preview>
+      <A3Video>s5k2xa_zsl_volte</A3Video>
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+	  <ChromatixName sensor_resolution_index="0" special_mode_mask="SCENE_FACE_DETECTION">
+      <ISPPreview>s5k2xa_face</ISPPreview>
+      <ISPSnapshot>s5k2xa_face</ISPSnapshot>
+      <ISPVideo>s5k2xa_face</ISPVideo>
+      <CPPPreview>s5k2xa_cpp_face</CPPPreview>
+      <CPPSnapshot>s5k2xa_cpp_face</CPPSnapshot>
+      <CPPVideo>s5k2xa_cpp_face</CPPVideo>
+      <CPPLiveshot>s5k2xa_cpp_face</CPPLiveshot>
+      <A3Preview>s5k2xa_zsl_face</A3Preview>
+      <A3Video>s5k2xa_zsl_face</A3Video>  
+      <External>s5k2xa_external_vta</External>
+    </ChromatixName>
+  </ResolutionChromatixInfo>
+</ChromatixConfigurationRoot>

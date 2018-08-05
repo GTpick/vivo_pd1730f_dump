@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.bbk.launcher2"
+    launcher:screenCount="2" >
+
+     <iconutils
+        launcher:iconUtilsScaleFactorMax="1.16"
+        launcher:iconUtilsScaleFactorMin="0.85"
+        launcher:iconUtilsBgWScaleFactor="1.02"
+		launcher:iconUtilsBgHScaleFactor="1.02"
+		/>
+
+	<!-- Global Search -->
+    <globalsearch
+        launcher:globalSearchBgBlurStyle="true"
+        launcher:globalSearchEnable="true" />
+	
+    <!-- default workspace -->
+    <celllayout
+        launcher:cellLayoutCellX="@integer/celllayout_cell_count_x"
+        launcher:cellLayoutCellY="6" />
+
+    <!-- default theme -->
+    <theme launcher:theme="android:raw/themes6" />
+
+    <!-- theme open support -->
+    <themeopen launcher:supportopen="true"/>
+
+    <!-- default scroll effect -->
+    <scroll launcher:scrollEffect="0" />
+
+    <!-- scene menu -->
+    <scenemenu launcher:sceneMenu="true" />
+
+    <!-- use new enter app animation or not -->
+    <animation launcher:useNewAnim="false" />
+    
+    <!-- show hide icon or not -->
+    <hideicon launcher:showHideIcon="false" />
+
+    <!-- default scene -->
+    <scene launcher:componentName="com.bbk.scene.tech/com.bbk.scene.tech.MainActivity" />
+
+    <!-- app widget order list -->
+    <orderwidget
+        launcher:componentName="com.vivo.doubletimezoneclock/com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProviderYing"
+        launcher:order="0" /> <!-- i挂件（清尚） -->
+    <orderwidget
+        launcher:componentName="com.vivo.magic.clockweathermusic/com.vivo.magic.clockweathermusic.WidgetProvider"
+        launcher:order="1" /> <!-- i挂件（轻悦） -->
+    <orderwidget
+        launcher:componentName="com.vivo.doubletimezoneclock/com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProvider"
+        launcher:order="2" /> <!-- i挂件（双时钟） -->
+    <orderwidget
+        launcher:componentName="com.vivo.magic.music/com.vivo.magic.music.MusicProvider"
+        launcher:order="3" /> <!-- i挂件（音乐） -->
+    <orderwidget
+        launcher:componentName="com.vivo.magic.note/com.vivo.magic.note.WidgetProvider"
+        launcher:order="4" /> <!-- 便签（轻悦） -->
+    <orderwidget
+        launcher:componentName="com.iqoo.secure/com.vivo.widget.magic.WidgetProvider"
+        launcher:order="5" /> <!-- 一键加速（轻悦） -->        
+	<orderwidget
+        launcher:componentName="com.vivo.dream.clock/com.vivo.dream.clock.VivoDreamClockApp"
+        launcher:order="6" /> <!-- 时钟（轻简约） -->
+    <orderwidget
+        launcher:componentName="com.vivo.dream.music/com.vivo.dream.music.VivoDreamMusicApp"
+        launcher:order="7" /> <!-- 音乐（轻简约） -->  
+    <orderwidget
+        launcher:componentName="com.android.notes/com.android.notes.appwidget.FastEntranceAppWidgetProvider"
+        launcher:order="8" /> <!-- 快记挂件 -->
+    <orderwidget
+        launcher:componentName="com.android.notes/com.android.notes.appwidget.ExhibitionAppWidgetProvider"
+        launcher:order="9" /> <!-- 展示挂件 -->		
+    <orderwidget
+        launcher:componentName="com.vivo.dream.note/com.vivo.dream.note.VivoDreamNoteApp"
+        launcher:order="10" /> <!-- 便签（轻简约） -->        
+    <orderwidget
+        launcher:componentName="com.iqoo.secure/com.vivo.widget.dream.VivoDreamManagerApp"
+        launcher:order="11" /> <!-- 一键加速（轻简约） -->        
+    <orderwidget
+        launcher:componentName="com.vivo.simpleclock/com.vivo.simpleclock.ClockAppWidgetProvider"
+        launcher:order="12" /> <!-- Mini时钟（锋影） -->
+    <orderwidget
+        launcher:componentName="com.vivo.simplemusic/com.vivo.simplemusic.MusicAppWidgetProvider"
+        launcher:order="13" /> <!-- Mini音乐（锋影） -->
+    <orderwidget
+        launcher:componentName="com.vivo.staticnotewidget/com.vivo.staticnotewidget.StaticNoteProvider"
+        launcher:order="14" /> <!-- Mini便签（锋影） -->
+    <orderwidget
+        launcher:componentName="com.vivo.dream.weather/com.vivo.dream.weather.VivoDreamWeatherApp"
+        launcher:order="15" /> <!-- 天气（轻简约） -->
+    <orderwidget
+        launcher:componentName="com.android.contacts.contactsstaredwidget/com.android.contacts.contactsstaredwidget.BBKContactsAppWidgetProvider"
+        launcher:order="16" /> <!-- 联系人收藏 -->
+    <orderwidget
+        launcher:componentName="com.vivo.widget.calendar/com.vivo.widget.calendar.CalendarAppWidgetProvider"
+        launcher:order="17" /> <!-- 日历 -->
+    <orderwidget
+        launcher:componentName="com.bbk.photoframewidget/com.bbk.photoframewidget.PhotoFrameWidget"
+        launcher:order="18" /> <!-- 相框 -->
+    <orderwidget
+        launcher:componentName="com.vivo.browser/com.vivo.browser.widget.BookmarkThumbnailWidgetProvider"
+        launcher:order="19" /> <!-- 书签 -->
+    <orderwidget
+        launcher:componentName="com.vivo.browser/com.vivo.browser.ui.widget.BookmarkThumbnailWidgetProvider"
+        launcher:order="20" /> <!-- vivo浏览器书签 -->
+
+    <!-- exclude widget list -->
+    <excludewidget launcher:componentName="com.android.settings/com.android.settings.widget.SettingsAppWidgetProvider" /> <!-- 电量控制 -->
+    <excludewidget launcher:componentName="com.renren.mobile.android/com.renren.mobile.android.ui.widget.RapidPubWidget_middle" /> <!-- 人人网（中） -->
+    <excludewidget launcher:componentName="com.renren.mobile.android/com.renren.mobile.android.ui.widget.RapidPubWidget_small" /> <!-- 人人网（小） -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.newsreader.appwidget.WidgetProvider_4_1" /> <!-- 网易新闻4x1 -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.newsreader.appwidget.WidgetProvider_4_3" /> <!-- 网易新闻4x3 -->
+    <excludewidget launcher:componentName="com.tencent.qqpimsecure/com.tencent.qqpimsecure.widget.TaskManagerWidgetProviderMini" /> <!-- 任务管理 1x2 -->
+    <excludewidget launcher:componentName="com.tmall.wireless/com.tmall.wireless.widget.TMSearchAppWidget" /> <!-- 天猫搜索 -->
+    <excludewidget launcher:componentName="com.tmall.wireless/com.tmall.wireless.widget.TMTimelineAppWidget" /> <!-- 天猫精品推荐 -->
+    <excludewidget launcher:componentName="com.tmall.wireless/com.tmall.wireless.widget.TMWidgetReceiver" /> <!-- 天猫 -->
+    <excludewidget launcher:componentName="com.ting.mp3.oemc.android/com.ting.mp3.oemc.android.activity.WidgetProviderFourToFour" /> <!-- 百度音乐4*4 -->
+    <excludewidget launcher:componentName="com.ting.mp3.oemc.android/com.ting.mp3.oemc.android.activity.WidgetProviderFourToTwo" /> <!-- 百度音乐4*2 -->
+    <excludewidget launcher:componentName="com.ting.mp3.oemc.android/com.ting.mp3.oemc.android.activity.WidgetProviderFourToOne" /> <!-- 百度音乐4*1 -->
+    <excludewidget launcher:componentName="com.baidu.searchbox_bbk/com.baidu.searchbox.widget.QuickSearchWidgetProvider" /> <!-- (4×2)百度-本地随心版 -->
+    <excludewidget launcher:componentName="com.baidu.searchbox_bbk/com.baidu.searchbox.widget.ClockWidgetProvider" /> <!-- (4×2)百度时钟 -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.nr.biz.widget.WidgetProvider_4_1" /> <!-- 网易新闻4*1 -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.nr.biz.widget.WidgetProvider_4_2" /> <!-- 网易新闻4*2 -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.nr.biz.widget.WidgetProvider_4_3" /> <!-- 网易新闻4*3 -->
+    <excludewidget launcher:componentName="com.netease.newsreader.activity/com.netease.nr.biz.widget.WidgetProvider_4_4" /> <!-- 网易新闻4*4 -->
+
+	<!-- recolorable widget list -->
+	<recolorablewidget launcher:componentName="com.vivo.magic.clockweathermusic/com.vivo.magic.clockweathermusic.WidgetProvider" />
+  	<recolorablewidget launcher:componentName="com.vivo.doubletimezoneclock/com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProvider" />
+    <recolorablewidget launcher:componentName="com.vivo.doubletimezoneclock/com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProviderNew" />
+    <recolorablewidget launcher:componentName="com.vivo.doubletimezoneclock/com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProviderYing" />
+	<recolorablewidget launcher:componentName="com.vivo.magic.note/com.vivo.magic.note.WidgetProvider" /> 
+	<recolorablewidget launcher:componentName="com.iqoo.secure/com.vivo.widget.magic.WidgetProvider" />
+	<recolorablewidget launcher:componentName="com.vivo.dream.note/com.vivo.dream.note.VivoDreamNoteApp" />
+	<recolorablewidget launcher:componentName="com.vivo.magic.clock/com.vivo.magic.clock.WidgetProvider" />
+    <recolorablewidget launcher:componentName="com.vivo.magic.music/com.vivo.magic.music.MusicProvider" />
+    <recolorablewidget launcher:componentName="com.android.notes/com.android.notes.appwidget.FastEntranceAppWidgetProvider" />
+    <recolorablewidget launcher:componentName="com.android.notes/com.android.notes.appwidget.ExhibitionAppWidgetProvider" />
+    
+    <!-- 文件夹 -->
+    <!-- 工具文件夹 -->
+    <userfolder
+        launcher:container="-100"
+        launcher:folderid="0"
+        launcher:screen="1"
+        launcher:title="@string/folder_tools"
+        launcher:x="3"
+        launcher:y="2" />
+
+    <!-- 便签 -->
+    <favorite
+        launcher:className="com.android.notes.Notes"
+        launcher:container="0"
+        launcher:packageName="com.android.notes"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+
+    <!-- 计算器 -->
+    <favorite
+        launcher:className="com.android.bbkcalculator.Calculator"
+        launcher:container="0"
+        launcher:packageName="com.android.bbkcalculator"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="0" />
+        
+    <!-- 录音机 -->
+    <favorite
+        launcher:className="com.android.bbksoundrecorder.SoundRecorder"
+        launcher:container="0"
+        launcher:packageName="com.android.bbksoundrecorder"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="0" />
+    
+    <!-- 指南针  -->
+    <favorite
+        launcher:className="com.vivo.compass.CalibrationActivity"
+        launcher:container="0"
+        launcher:packageName="com.vivo.compass"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="0" />
+
+    <!-- 意见反馈 -->
+    <favorite
+        launcher:className="com.vivo.website.feedback.HotQuestionEntry"
+        launcher:container="0"
+        launcher:packageName="com.vivo.website"
+        launcher:screen="0"
+        launcher:x="4"
+        launcher:y="0" />
+
+    <!-- 收音机 -->
+    <favorite
+        launcher:className="com.vivo.FMRadio.FMRadio"
+        launcher:container="0"
+        launcher:packageName="com.vivo.FMRadio"
+        launcher:screen="0"
+        launcher:x="5"
+        launcher:y="0" />
+
+	<!-- Google 文件夹 -->
+	<userfolder
+        launcher:container="-100"
+        launcher:folderid="1"
+        launcher:screen="0"
+        launcher:title="@string/folder_google"
+        launcher:x="3"
+        launcher:y="5" />
+        
+	<!-- Google -->
+    <favorite
+        launcher:className="com.google.android.googlequicksearchbox.SearchActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+	
+	<!-- Chrome -->
+    <favorite
+        launcher:className="com.google.android.apps.chrome.Main"
+        launcher:container="1"
+        launcher:packageName="com.android.chrome"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="0" /> 
+        
+    <!-- Gmail -->
+    <favorite
+        launcher:className="com.google.android.gm.ConversationListActivityGmail"
+        launcher:container="1"
+        launcher:packageName="com.google.android.gm"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="0" />
+    
+    <!-- 地图 -->
+    <favorite
+        launcher:className="com.google.android.maps.MapsActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.maps"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="0" />
+    
+    <!-- YouTube -->
+    <favorite
+        launcher:className="com.google.android.youtube.app.honeycomb.Shell$HomeActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.youtube"
+        launcher:screen="0"
+        launcher:x="4"
+        launcher:y="0" 
+        />
+    
+    <!-- 云端硬盘 -->
+    <favorite
+        launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.docs"
+        launcher:screen="0"
+        launcher:x="5"
+        launcher:y="0" />
+    
+    <!-- Play Music -->
+    <favorite
+        launcher:className="com.android.music.activitymanagement.TopLevelActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.music"
+        launcher:screen="0"
+        launcher:x="6"
+        launcher:y="0" />
+    
+    <!-- Play影视 -->
+    <favorite
+        launcher:className="com.google.android.youtube.videos.EntryPoint"
+        launcher:container="1"
+        launcher:packageName="com.google.android.videos"
+        launcher:screen="0"
+        launcher:x="7"
+        launcher:y="0" />
+    
+    <!-- Duo -->
+    <favorite
+        launcher:className="com.google.android.apps.tachyon.MainActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.tachyon"
+        launcher:screen="0"
+        launcher:x="8"
+        launcher:y="0" />
+    
+    <!-- G+ 照片 -->
+    <favorite
+        launcher:className="com.google.android.apps.photos.home.HomeActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.photos"
+        launcher:screen="0"
+        launcher:x="9"
+        launcher:y="0" />
+    
+    <!-- 语音搜索 -->
+    <favorite
+        launcher:className="com.google.android.googlequicksearchbox.VoiceSearchActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:screen="0"
+        launcher:x="10"
+        launcher:y="0" />
+    
+    <!-- 环聊 -->
+    <favorite
+        launcher:className="com.google.android.talk.SigningInActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.talk"
+        launcher:screen="0"
+        launcher:x="11"
+        launcher:y="0" />
+
+    
+    <!-- G+ 照片 -->
+    <favorite
+        launcher:className="com.google.android.apps.plus.phone.ConversationListActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.plus"
+        launcher:screen="0"
+        launcher:x="12"
+        launcher:y="0" />
+
+    <!-- Play 游戏 -->
+    <favorite
+        launcher:className="com.google.android.gms.games.ui.destination.main.MainActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.play.games"
+        launcher:screen="0"
+        launcher:x="13"
+        launcher:y="0" />
+
+    <!-- 新闻和天气 -->
+    <favorite
+        launcher:className="com.google.android.apps.genie.geniewidget.activities.NewsActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.genie.geniewidget"
+        launcher:screen="0"
+        launcher:x="14"
+        launcher:y="0" />
+    
+    <!-- Google 设置 -->
+    <favorite
+        launcher:className="com.google.android.gms.app.settings.GoogleSettingsActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.gms"
+        launcher:screen="0"
+        launcher:x="15"
+        launcher:y="0" />
+    
+    <!-- Google+ -->
+    <favorite
+        launcher:className="com.google.android.apps.plus.phone.HomeActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.plus"
+        launcher:screen="0"
+        launcher:x="16"
+        launcher:y="0" />
+    
+    <!-- Play图书 -->
+    <favorite
+        launcher:className="com.google.android.apps.books.app.BooksActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.books"
+        launcher:screen="0"
+        launcher:x="17"
+        launcher:y="0" />
+    
+    <!-- Play报亭 -->
+    <favorite
+        launcher:className="com.google.apps.dots.android.app.activity.CurrentsStartActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.magazines"
+        launcher:screen="0"
+        launcher:x="18"
+        launcher:y="0" />
+    
+    <!-- 本地 -->
+    <favorite
+        launcher:className="com.google.android.maps.PlacesActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.maps"
+        launcher:screen="0"
+        launcher:x="19"
+        launcher:y="0" />    
+        
+    <!-- 导航 -->
+    <favorite
+        launcher:className="com.google.android.maps.driveabout.app.DestinationActivity"
+        launcher:container="1"
+        launcher:packageName="com.google.android.apps.maps"
+        launcher:screen="0"
+        launcher:x="20"
+        launcher:y="0" />
+      
+    <!-- 常用程序 -->
+    <!-- 电话 -->
+    <favorite
+        launcher:className="com.android.dialer.TwelveKeyDialer"
+        launcher:container="-101"
+        launcher:packageName="com.android.dialer"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+
+    <!-- 信息 -->
+    <favorite
+        launcher:className="com.android.mms.ui.ConversationList"
+        launcher:container="-101"
+        launcher:packageName="com.android.mms"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="0" />
+    
+    <!-- 浏览器 -->
+    <favorite
+        launcher:className="com.vivo.browser.BrowserActivity"
+        launcher:container="-101"
+        launcher:packageName="com.vivo.browser"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="0" />
+
+    <!-- 相机 -->
+    <favorite
+        launcher:className="com.android.camera.CameraActivity"
+        launcher:container="-101"
+        launcher:packageName="com.android.camera"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="0" /> 
+
+    <!-- 第一屏 -->
+    <!-- google搜索 -->
+    <appwidget
+        launcher:className="com.google.android.googlequicksearchbox.SearchWidgetProvider"
+        launcher:container="-100"
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:screen="0"
+        launcher:spanX="4"
+        launcher:spanY="1"
+        launcher:x="0"
+        launcher:y="0" />
+    
+	<!-- i挂件(双时钟) -->
+    <appwidget
+        launcher:className="com.vivo.doubletimezoneclock.DoubleTimezoneClockWidgetProviderYing"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.doubletimezoneclock"
+        launcher:screen="0"
+        launcher:spanX="4"
+        launcher:spanY="3"
+        launcher:x="0"
+        launcher:y="1" />
+    
+    <!-- vivo 商店 -->
+    <favorite
+        launcher:className="com.vivo.appstore.activity.LaunchActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.appstore"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="4"  />
+    
+    <!-- i 音乐 -->
+    <favorite
+        launcher:className="com.android.bbkmusic.WidgetToTrackActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.bbkmusic"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="4" />
+    
+    <!-- 日历 -->
+    <favorite
+        launcher:className="com.bbk.calendar.MainActivity"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.calendar"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="4" />
+    
+    <!-- i 主题 -->
+    <favorite
+        launcher:className="com.bbk.theme.Theme"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.theme"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="4" />
+
+    <!-- Play 商店 -->
+    <favorite
+        launcher:className="com.android.vending.AssetBrowserActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.vending"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="5"  />
+
+    <!-- 闹钟时钟 -->
+    <favorite
+        launcher:className="com.android.BBKClock.Timer"
+        launcher:container="-100"
+        launcher:packageName="com.android.BBKClock"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="5" />
+    
+    <!-- 设置 -->
+    <favorite
+        launcher:className="com.android.settings.Settings"
+        launcher:container="-100"
+        launcher:packageName="com.android.settings"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="5" />
+  
+    <!-- Google 文件夹 -->
+
+    <!-- 第二屏 -->
+    <!-- i 管家 -->
+    <favorite
+        launcher:className="com.iqoo.secure.MainGuideActivity"
+        launcher:container="-100"
+        launcher:packageName="com.iqoo.secure"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="0" />
+
+    <!-- i 视频 -->
+    <favorite
+        launcher:className="com.android.VideoPlayer.VideoPlayer"
+        launcher:container="-100"
+        launcher:packageName="com.android.VideoPlayer"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="0" />
+    
+    <!-- 天气 -->
+    <favorite
+        launcher:className="com.vivo.weather.WeatherMain"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.weather"
+        launcher:screen="1"
+        launcher:x="2"
+        launcher:y="0" />
+    
+    <!-- 相册 -->
+    <favorite
+        launcher:className="com.android.gallery3d.vivo.GalleryTabActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.gallery"
+        launcher:screen="1"
+        launcher:x="3"
+        launcher:y="0" />
+
+    <!-- 联系人 -->
+    <favorite
+        launcher:className="com.android.contacts.DialtactsContactsEntryActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.contacts"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="1" />
+    
+	<!-- 云服务 -->
+    <favorite
+        launcher:className="com.bbk.cloud.ui.BBKCloudHomeScreen"
+        launcher:container="-100"
+        launcher:packageName="com.bbk.cloud"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="1" />  
+          
+    <!-- 文件管理 -->
+    <favorite
+        launcher:className="com.android.filemanager.FileManagerActivity"
+        launcher:container="-100"
+        launcher:packageName="com.android.filemanager"
+        launcher:screen="1"
+        launcher:x="2"
+        launcher:y="1" />
+    
+    <!-- 互传 -->
+    <favorite
+        launcher:className="com.vivo.easyshare.activity.SplashScreenActivity"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.easyshare"
+        launcher:screen="1"
+        launcher:x="3"
+        launcher:y="1" />
+		
+    <!-- vivo官网 -->
+    <favorite
+        launcher:packageName="com.vivo.website"
+        launcher:className="com.vivo.website.activity.SplashActivity"
+        launcher:container="-100"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="2" />
+    
+    <!-- 电子邮件 -->
+    <favorite
+        launcher:className="com.vivo.email.activity.Welcome"
+        launcher:container="-100"
+        launcher:packageName="com.vivo.email"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="2" />
+
+    <!-- 一键锁屏 -->
+    <favorite
+        launcher:packageName="com.android.bbk.lockscreen3"
+        launcher:className="com.android.bbk.lockscreen3.LockScreenActivity"
+        launcher:container="-100"
+        launcher:screen="1"
+        launcher:x="2"
+        launcher:y="2" />
+
+    <!-- 工具文件夹 -->
+
+</favorites>

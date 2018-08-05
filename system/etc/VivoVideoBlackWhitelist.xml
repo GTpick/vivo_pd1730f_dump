@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+  <version>2</version>
+  <application name="com.tencent.mm">
+      <feature name="encoder">
+          <resolution name="960x464">
+              <!-- changemod: 0.do nothing 1.change bitrate,2.change omxname -->
+              <values name="bt:1200;md:1;tn:7;qp:40;rt:50.0;bn:3;CodecValue:changemod:1;hwbt:2400000;">
+              </values>
+          </resolution>
+		  <resolution name="960x480">
+              <!-- changemod: 0.do nothing 1.change bitrate,2.change omxname -->
+              <values name="bt:1200;md:1;tn:7;qp:40;rt:50.0;bn:3;CodecValue:changemod:1;hwbt:2400000;">
+              </values>
+          </resolution>
+      </feature>
+  </application>
+</content>

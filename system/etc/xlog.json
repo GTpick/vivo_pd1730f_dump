@@ -1,0 +1,287 @@
+{
+    "rootdir": "/sdcard/bbklog",
+    "aprefix":"apLog/aplog",
+    "version":0.1,
+    "group_r": [
+    {
+        "name": "adb_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "1073741824",
+        "work_path":"$RDIR/apLog",
+        "group": [
+        {
+            "name": "xlog",
+            "type": "xlog",
+            "enable": true,
+            "xlog": [
+            {
+                "name": "kmsg",
+                "dev": "/dev/kmsg",
+                "filename": "kernel_log",
+                "reader": "XReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 4
+            },
+            {
+                "name": "main",
+                "dev": "/dev/log/main",
+                "filename": "main_log",
+                "reader": "AndroidReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 7
+            },
+            {
+                "name": "events",
+                "dev": "/dev/log/events",
+                "filename": "events_log",
+                "reader": "AndroidReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 1
+            },
+            {
+                "name": "system",
+                "dev": "/dev/log/system",
+                "filename": "system_log",
+                "reader": "AndroidReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 4
+            },
+            {
+                "name": "radio",
+                "dev": "/dev/log/radio",
+                "filename": "radio_log",
+                "reader": "AndroidReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 4
+            }]
+        }]
+     },
+     {
+        "name": "qsee_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "838860800",
+        "group": [
+        {
+            "name": "xlog",
+            "type": "xlog",
+            "enable": true,
+            "xlog": [
+            {
+                "name": "qsee",
+                "dev": "/sys/kernel/debug/tzdbg/qsee_log",
+                "filename": "qsee_log",
+                "reader": "XReader",
+                "writer": "DirRotateWriter",
+                "maxsize": 20
+            }]
+        }]
+     },
+     {
+         "name": "qxdm_log",
+         "type": "parent",
+         "enable": false,
+         "totalsize" : "1073741824",
+         "work_path":"$RDIR/diag_logs",
+         "group": [
+         {
+             "name": "ylog",
+             "type": "ylog",
+             "enable": true,
+             "ylog": [
+             {
+                 "name": "diag_mdlog",
+                 "command_run" : "diag_mdlog -t 0 -x 70 -d -c -o $RDIR/diag_logs/ -m $RDIR/diag_logs/Diag.cfg",
+                 "command_stop": "diag_mdlog  -k -c;sleep 1;kill -9 $PID",
+                 "maxsize": 2
+             }]
+         }]
+     },
+	 {
+         "name": "circulate_modem_log",
+         "type": "parent",
+         "enable": false,
+         "totalsize" : "1073741824",
+         "group": [
+         {
+             "name": "ylog",
+             "type": "ylog",
+             "enable": true,
+             "ylog": [
+             {
+                 "name": "diag_mdlog",
+                 "command_run" : "diag_mdlog -t 2 -p 2 -f $RDIR/diag_logs/Diag.cfg",
+                 "command_stop" : "diag_mdlog -p 2 -k -c;sleep 1;kill -9 $PID",
+                 "maxsize": 2
+             }]
+         }]
+     },
+     {
+         "name": "net_log",
+         "type": "parent",
+         "enable": false,
+         "totalsize" : "838860800",
+         "work_path":"$RDIR/net_log",
+         "group": [
+         {
+             "name": "ylog",
+             "type": "ylog",
+             "enable": true,
+             "ylog": [
+             {
+                 "name": "tcpdump",
+                 "command_run": "mkdir $RDIR/net_log;/system/xbin/tcpdump -s 0 -U -i any -C 40 -w $RDIR/net_log/tcp_dump.pcap",
+                 "command_stop": "kill -9 $PID",
+                 "maxsize": 2
+             }]
+         }]
+     },
+     {
+         "name": "iptables_log",
+         "type": "parent",
+         "enable": false,
+         "work_path":"$RDIR/net_log",
+         "group": [
+         {
+             "name": "iptables",
+             "command_run": "iptables -L -n > $RDIR/net_log/iptables.txt;iptables -L -n > $RDIR/iptables.txt",
+             "command_stop": "",
+             "maxsize": 2
+         }]
+     },
+    {
+        "name": "dload_switch",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "1024000",
+        "group": [
+        {
+            "name": "ylog",
+            "type": "ylog",
+            "enable": true,
+            "ylog": [
+            {
+                "name": "dload_switch",
+                "command_run": "echo 1 > /sys/module/msm_poweroff/parameters/download_mode",
+                "command_stop": "echo 0 > /sys/module/msm_poweroff/parameters/download_mode",
+                "maxsize": 2
+            }]
+        }]
+    },
+      {
+        "name": "cmd_prop_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "1024000",
+        "group": [
+        {
+            "name": "ylog",
+            "type": "ylog",
+            "enable": true,
+            "ylog": [
+            {
+                "name": "cmdline",
+                "command_run": "cat /proc/cmdline > $PDIR/cmdline",
+                "command_stop": "",
+                "maxsize": 2
+            },
+            {
+                "name": "prop",
+                "command_run": "getprop > $PDIR/properties",
+                "command_stop": "",
+                "maxsize": 2
+            }]
+          }]
+     },
+     {
+        "name": "smartAP_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "104857600",
+        "work_path":"$RDIR/SmartPA",
+        "group": [
+        {
+            "name": "ylog",
+            "type": "ylog",
+            "enable": true,
+            "ylog": [
+            {
+                "name": "climax",
+                "command_run": "mkdir $RDIR/SmartPA;
+                climax  -l /system/etc/tfa98xx.cnt --dump> $RDIR/SmartPA/vivo.txt;
+                climax  -l /system/etc/tfa98xx.cnt --calshow >> $RDIR/SmartPA/vivo.txt; 
+                climax  -l /system/etc/tfa98xx.cnt --dumpmodel=z  --count=5 > $RDIR/SmartPA/dumpmodel_z.csv; 
+                climax  -l /system/etc/tfa98xx.cnt --save=$RDIR/SmartPA/vivo.speaker.bin;
+                climax  -l /system/etc/tfa98xx.cnt --save=$RDIR/SmartPA/vivo.preset.bin;
+                climax  -l /system/etc/tfa98xx.cnt --save=$RDIR/SmartPA/vivo.config.bin;
+                climax  -l /system/etc/tfa98xx.cnt --record=200  --count=100  --output=$RDIR/SmartPA/vivo.csv",
+                        "command_stop": "kill -9 $PID",
+                        "maxsize": 2
+            }]
+          }]
+     },
+     {
+        "name": "GPU_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "52428800",
+        "work_path":"$RDIR/gpu",
+        "group": [
+        {
+            "name": "fileobserver",
+            "type": "fileobserver",
+            "enable": true,
+            "fileobserver": [
+            {
+                "observer": "GPUObserver",
+                "sdir": "/data/misc/gpu",
+                "ddir": "$RDIR/gpu",
+                "mask": 398
+            }]
+        }]
+       
+     },
+     {
+        "name": "anr_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "104857600",
+        "work_path":"$RDIR/anr",
+        "group": [
+        {
+            "name": "fileobserver",
+            "type": "fileobserver",
+            "enable": true,
+            "fileobserver": [
+            {
+                "observer": "ANRObserver",
+                "sdir": "/data/anr",
+                "ddir": "$RDIR/anr",
+                "mask": 398
+            }]
+        }]
+     },
+     {
+        "name": "tombstones_log",
+        "type": "parent",
+        "enable": false,
+        "totalsize" : "52428800",
+        "work_path":"$RDIR/tombstones",
+        "group": [
+        {
+            "name": "fileobserver",
+            "type": "fileobserver",
+            "enable": true,
+            "fileobserver": [
+            {
+                "observer": "CopyObserver",
+                "sdir": "/data/tombstones",
+                "ddir": "$RDIR/tombstones",
+                "mask": 398
+            }]
+        }]
+       
+     }
+ ]
+}
